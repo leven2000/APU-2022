@@ -1,0 +1,34 @@
+.icono-pag{
+    width: 2em;
+}
+
+.doss{
+    margin-left: 7em;
+    margin-bottom:1em;
+}
+.tress{
+    margin-top: 4px;
+    text-align: center;
+    
+}
+.unoo{
+   
+   text-align: center;
+}
+.formulario-color{
+    background: rgb(74, 88, 92);
+}
+.imagg{
+    width: 6em;
+}
+h5{
+    width: 8em;
+}
+.imag1{
+    width:3em;
+}
+img {
+    width: 70px;
+    height: 35px;
+    object-fit: cover;
+}

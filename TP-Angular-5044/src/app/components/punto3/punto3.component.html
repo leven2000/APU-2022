@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+    <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">{{tituloform}}</h5>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form >
+                        <div class="mb-3">
+                            <label for="idusername" class="form-label">Dni</label>
+                            <input type="text" class="form-control" id="dni"
+                                [(ngModel)]="pasaje._dniPasajero" name="pasaje" >
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Tipo Pasajero
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" (click)='cambiarTipo("Menor")'type="button">Menor</button></li>
+                                <li><button class="dropdown-item" (click)='cambiarTipo("Adulto")'type="button">Adulto</button></li>
+                                <li><button class="dropdown-item" (click)='cambiarTipo("Jubilado")' type="button">Jubilado</button></li>
+                            </ul>
+                            <h5 *ngIf="mostrar1 ">El tipo de pasaje es para un: {{tipoActual}}</h5>
+                          </div>
+                        <div class="mb-3">
+                            <label for="idusername" class="form-label">Precio Pasaje</label>
+                            <input type="number"  [(ngModel)]="precioInicial" (change)="calcularPrecio(precioInicial, tipoActual)"  class="form-control" id="Precio"  name="pasaje" >
+                        </div>
+                        <div class="mb-3">
+                        <label *ngIf="mostrar1 && mostrar2" >El precio final es: {{precioFinal}}</label>
+                        </div>
+                        <div class="mb-3">
+                        <button (click)="agregarPasaje(pasaje)" type="submit" class="btn btn-primary">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+</div>  
+</div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+        <th>Dni</th>
+        <th>Precio pasaje</th>
+        <th>Categoria Pasajero</th>
+        <th>Fecha</th>
+        <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of pasajes">
+        <td>{{item._dniPasajero}}</td>
+        <td>{{item.precioPasaje}}</td>
+        <td>{{item.categoriaPasajero}}</td>
+        <td>{{item.fechaCompra | date }}</td>
+            
+        <td>
+        <button (click)="eliminarPasaje(item._dniPasajero)" type="btn btn-danger" class="btn btn-
+        secondary" >Borrar</button>
+        </td>
+        </tr>
+        </tbody>
+        </table>

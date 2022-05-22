@@ -1,0 +1,63 @@
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Elegir Palabras
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li *ngFor="let tipo of tipos"><button  (click)='cambiarTipo(tipo)'class="dropdown-item" type="button">{{tipo}}</button></li>
+  </ul>
+</div>
+
+<div class="container" *ngIf="eligio">
+  <h5>El tipo de palabras para Jugar es: {{tipoElegido}}</h5>
+  <div class="row">
+
+    <div class="col text-center">
+      <img src="assets/punto2/{{intentos}}.png" alt="Imagen final" class="ahorcado-img">
+      <h3>Intentos: <small> {{intentos}} de 7 </small></h3>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+  <div class="col text-center">
+    
+    <h1>
+      {{palabraOculta}}
+    </h1>
+
+    </div>
+  </div>
+
+  <div class="row" *ngIf="gano">
+    <div class="col text-center">
+      
+      <h1>
+        GANASTE  
+      </h1>
+      <button (click) = "reinciar()" type="button" class="btn btn-success">Jugar de nuevo</button>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="perdio">
+      <div class="col text-center">
+        
+        <h1>
+          PERDISTE 
+        </h1>
+        <h4>
+          La palabra era: {{palabra}}
+        </h4>
+        <button (click) = "reinciar()"  type="button" class="btn btn-danger">Juegar de nuevo</button>
+        </div>
+      </div>
+  <div class="row">
+    <div class="col text-center">
+      <button (click) = "comprobar(letra)" *ngFor="let letra of letras" class="btn btn-primary">
+        {{letra}}
+      </button>
+    </div>
+  </div>
+ 
+</div>

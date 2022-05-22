@@ -1,0 +1,38 @@
+<div class="container-fluid ">
+
+    <div class="row ">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">{{lenguajeDetectado}}</span>
+            <input type="text" class="form-control" placeholder="Ingrese Texto a traducir" [(ngModel)]="texto">
+        </div>
+          
+    </div>
+    <div class="row">
+        <div class="col">
+        <h5>Ingrese Idioma de Salida:</h5>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md">
+            <button class="btn btn-outline-secondary" type="button"   (click)="cambiarLenguaje('es')"><img src="../../../assets/esp.png"  alt="..."></button>
+            <button class="btn btn-outline-secondary" type="button" (click)="cambiarLenguaje('de')"><img src="../../../assets/gr.png"  alt="..."></button>
+            <button class="btn btn-outline-secondary" type="button"(click)="cambiarLenguaje('pt')"><img src="../../../assets/pr.png"  alt="..."></button>
+            <button class="btn btn-outline-secondary" type="button"(click)="cambiarLenguaje('en')"><img src="../../../assets/en.png"  alt="..."></button>
+    
+        </div>
+        <!-- <select class="custom-select" [(ngModel)]="lenguajeSeleccionado"  aria-label="Sleccionar Idioma">
+            <option selected value="en">English</option>
+            <option value="pt">Portuguese</option>
+            <option value="es">Esp</option>
+        </select> -->
+    </div>
+    <div class="row col-4 " >
+        <button class="btn btn-primary" (click)="traducir()">Traducir</button>
+    </div>
+
+    <div class="input-group mb-3">
+    
+        <span class="input-group-text" id="inputGroup-sizing-sm">Trauccion:</span>
+        <input type="text" class="form-control" [(ngModel)]="textoTraducido">
+      </div>
+      
+ 
+</div>

@@ -1,0 +1,82 @@
+<div class="container">
+    
+    <br>
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+
+            <div class=" col-md-12 p-2 mb-2  bg-success">Conversion de Divisas</div>
+
+            <div class=" col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col"><img src="btn-lg btn-block"></th>
+                            <th scope="col"><img src="/assets/esp.png"></th>
+                            <th scope="col"><img src="/assets/pr.png"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><img src="/assets/eeuu.jpg"></th>
+                            <td>01.00</td>
+                            <td>118.36</td>
+                            <td>4.93</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="/assets/esp.png"></th>
+                            <td>0.01</td>
+                            <td>01.00</td>
+                            <td>0.04</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="/assets/pr.png"></th>
+                            <td>0.2</td>
+                            <td>23.99</td>
+                            <td>01.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-md-4 ">
+
+
+            <div class="card formulario-color">
+                <div class=" col-md-12 p-2 mb-2 bg-secondary text-white unoo">
+                    Conversion De Divisas
+                </div>
+                <form class=" col-md-12">
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" class="form-control" id="val" aria-describedby="Cantidad" #val>
+                    </div>
+                    <div class="form-group">
+                        <label for="de">De</label>
+                        <select id="moneda1" class="custom-select form-control" name="moneda1" [(ngModel)]="moneda1">
+                            <option value="USD">USD Dolares</option>
+                            <option value="ARS">AR Pesos Argentinos</option>
+                            <option value="BRL">BR Reales</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="a">A</label>
+                        <select id="moneda2" class="custom-select form-control" name="moneda2" [(ngModel)]="moneda2">
+                            <option value="USD">USD Dolares</option>
+                            <option value="ARS">AR Pesos Argentinos</option>
+                            <option value="BRL">BR Reales</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <h1 style="color:white">{{a.result | currency: "$"}}</h1>
+                    </div>
+                    <button type="submit" class=" col-sm-12 btn btn-warning btn-sm" style="margin-bottom: 15px;"
+                        (click)="devolverDiv(val)">Convertir <i class="fas fa-arrow-right "
+                            style="float:right"></i></button>
+
+                </form>
+            </div>
+
+        </div>

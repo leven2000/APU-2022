@@ -1,0 +1,17 @@
+<div class="container-fluid py-3">
+    <div class="row ">
+        <div class="col mx-auto">
+            <div class="input-group my-5">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Url</span>
+                </div>
+                <input  [(ngModel)]="url" name="url" type="text" class="form-control" placeholder="Inserte Url" aria-label="Url" aria-describedby="basic-addon1">
+            </div>
+            <button type="button" class="btn btn-success btn-lg btn-block" (click)="generarQr()">Generar QR</button>
+        </div>
+        <div class="col d-flex align-items-end flex-column ">
+            <img src="{{qr}}">
+        </div>
+    </div>
+    
+</div>

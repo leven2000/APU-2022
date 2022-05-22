@@ -1,0 +1,15 @@
+
+<div class="container-fluid py-3">
+    <div class="row">
+       <div class="col-lg-4 col-md-6 my-3 d-flex " *ngFor="let item of peliculas" >
+            <div class="card text-white bg-secondary border-dark " >
+                <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
+                <div class="card-body ">
+                    <h1 class="card-title ">{{item.title}}</h1>
+                    <h4 class="text-black">{{item.rate}}</h4>
+                    <p class="card-text" >{{item.descripcion}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
