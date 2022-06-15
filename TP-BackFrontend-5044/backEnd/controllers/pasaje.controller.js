@@ -7,6 +7,8 @@ pasajeCtrl.getPasajes = async (req , res) =>{
 }
 
 
+
+
 pasajeCtrl.deletePasaje = async (req, res)=>{
     try {
         await Pasaje.deleteOne({_id: req.params.id});
@@ -44,7 +46,7 @@ pasajeCtrl.createPasaje = async (req, res) =>{
 pasajeCtrl.editPasaje = async (req, res) => {
     const pasaje = new Pasaje(req.body);
     try {
-        await Pasaje.updateOne({_id: req.body._id}, pasaje);
+        await Pasaje.updateOne({_id: req.params._id}, pasaje);
         res.json({
             'status': '1',
             'msg': 'Pasaje editado con exito'
@@ -60,6 +62,9 @@ pasajeCtrl.editPasaje = async (req, res) => {
 
 
 
-//pasajeCtrl.getPasajeros
+pasajeCtrl.getPasajeros = async (req, res)=>{
+    var pasajeros = await Pasaje.find({'categoriaPasajero': req.params.categoria}).populate('pasajero');
+    res.json(pasajeros)
+}
 
 module.exports = pasajeCtrl;

@@ -5,6 +5,12 @@ libroCtrl.getLibros = async (req , res) =>{
     var libros = await Libro.find();
     res.json(libros)
 }
+libroCtrl.getDestacados = async (req, res) =>{
+
+    var librosDestacados = await Libro.find({'destacado': true});
+    res.json(librosDestacados)
+  
+}
 
 libroCtrl.createLibro = async (req, res) =>{
     var libro = new Libro(req.body);
@@ -12,7 +18,7 @@ libroCtrl.createLibro = async (req, res) =>{
         await libro.save();
         res.json({
             'satus': '1',
-            'msg': 'Libro guardado'
+            'msg': 'Libro guardadoo'
         })
     }
     catch (error){

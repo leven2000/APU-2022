@@ -8,6 +8,6 @@ router.get('/', pasajeCtrl.getPasajes);
 router.post('/', pasajeCtrl.createPasaje);
 router.put('/:id', pasajeCtrl.editPasaje);
 router.delete('/:id',pasajeCtrl.deletePasaje);
-//router.put('/:categoriaPasajero', pasajeCtrl.getPasajeros);
+router.get('/:categoria', pasajeCtrl.getPasajeros);
 
 module.exports= router;

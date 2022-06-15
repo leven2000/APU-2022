@@ -6,7 +6,7 @@ const PasajeSchema = new Schema({
     precioPasaje: {type: Number, required: true},
     categoriaPasajero: {type: String, required: true},
     fechaCompra: {type: String, required: true},
-    pasajero: {type: Schema.Types.ObjectId, ref: Persona, required: true},
+    pasajero: {type: Schema.Types.ObjectId, ref: Persona, required: true}
     
 })
 

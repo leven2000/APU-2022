@@ -5,7 +5,7 @@ const PersonaSchema = new Schema({
     apellido: {type: String, required: true},
     nombre: {type: String, required: true},
     nro_documento: {type: String, required: true},
-    email: {type: Number, required: true},
+    email: {type: String, required: true},
 
 })
 
