@@ -11,6 +11,7 @@ import { LibrosComponent } from './components/libros/libros.component';
 import { TransaccionComponent } from './components/transaccion/transaccion.component';
 import { PasajesComponent } from './components/pasajes/pasajes.component';
 import { FormsModule } from '@angular/forms';
+import { AltaLibrosComponent } from './components/libros/alta-libros/alta-libros.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     LibrosComponent,
     TransaccionComponent,
-    PasajesComponent
+    PasajesComponent,
+    AltaLibrosComponent
   ],
   imports: [
     BrowserModule,

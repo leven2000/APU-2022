@@ -8,7 +8,11 @@ import { Libro } from 'src/app/models/libros';
   styleUrls: ['./libros.component.css']
 })
 export class LibrosComponent implements OnInit {
+
+  indice:number=0;
   libros!:Array<Libro>
+  libro:Libro = new Libro();
+
   constructor(private librosService:LibroService) { 
     this.cargarLibros()
   }
@@ -27,10 +31,34 @@ export class LibrosComponent implements OnInit {
           unLibro= new Libro()          
         });
         console.log(this.libros)
+        this.iniciar();
       },
       error=>{
 
       }
     )
   }
+
+  iniciar(){
+    if (this.indice < this.libros.length){
+      this.libro = this.libros[this.indice];
+    }
+  }
+
+  siguiente(){
+    this.indice = this.indice +1;
+    if (this.indice < this.libros.length){
+      this.libro = this.libros[this.indice];
+    }
+  }
+
+
+  anterior(){
+    this.indice = this.indice -1;
+    if (this.indice < this.libros.length){
+      this.libro = this.libros[this.indice];
+    }
+
+  }
+
 }

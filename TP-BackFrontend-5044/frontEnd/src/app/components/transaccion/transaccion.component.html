@@ -1,1 +1,72 @@
-<p>transaccion works!</p>
+<div class="container">
+    
+    
+        <div class="row ">
+
+
+            <div class="card formulario-color">
+                <div class=" col-md-12 p-2 mb-2 bg-secondary text-white unoo">
+                    Conversion De Divisas
+                </div>
+                <form class=" col-md-12">
+                    <div class="form-group">
+                        <label for="cantidad">Email</label>
+                        <input type="string" class="form-control" name="email" aria-describedby="Email" [(ngModel)]="email" >
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" class="form-control" id="val" aria-describedby="Cantidad" #val>
+                    </div>
+                    <div class="form-group">
+                        <label for="de">De</label>
+                        <select id="moneda1" class="custom-select form-control" name="moneda1" [(ngModel)]="moneda1">
+                            <option value="USD">USD Dolares</option>
+                            <option value="ARS">AR Pesos Argentinos</option>
+                            <option value="BRL">BR Reales</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="a">A</label>
+                        <select id="moneda2" class="custom-select form-control" name="moneda2" [(ngModel)]="moneda2">
+                            <option value="USD">USD Dolares</option>
+                            <option value="ARS">AR Pesos Argentinos</option>
+                            <option value="BRL">BR Reales</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <h1>{{a.result | currency: "$"}}</h1>
+                    </div>
+                    <button type="submit" class=" col-sm-12 btn btn-warning btn-sm" style="margin-bottom: 15px;"
+                        (click)="devolverDiv(val)">Convertir <i class="fas fa-arrow-right "
+                            style="float:right"></i></button>
+
+                </form>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                <th>Email</th>
+                <th>Moneda de Origen</th>
+                <th>Cantidad de Origen</th>
+                <th>Moneda de Destino</th>
+                <th>Cantidad de Destino</th>
+                <th>Tasa de Conversion</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of transacciones">
+                <td>{{item.emailCliente}}</td>
+                <td>{{item.monedaOrigen}}</td>
+                <td>{{item.cantidadOrigen}}</td>
+                <td>{{item.monedaDestino}}</td>
+                <td>{{item.cantidadDestino}}</td>
+                <td>{{item.tasaConversion}}</td>
+                    
+                </tr>
+                </tbody>
+                </table>
+        </div>
+
+</div>

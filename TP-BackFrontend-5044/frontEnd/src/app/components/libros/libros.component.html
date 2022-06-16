@@ -4,18 +4,18 @@
       
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="" class="d-block w-100" alt="...">
+            <img src="{{libro.imagen}}" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
-              <h5></h5>
-              <p></p>
+              <h5>{{libro.libro}}</h5>
+              <p>{{libro.descripcion}}</p>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button"  >
+        <button class="carousel-control-prev" type="button" (click)="anterior()" >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" >
+        <button class="carousel-control-next" type="button" (click)="siguiente()" >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
