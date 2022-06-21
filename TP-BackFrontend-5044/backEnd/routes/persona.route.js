@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.get('/', personaCtrl.getPersonas);
 router.post('/', personaCtrl.createPersona);
-router.get('/:id', personaCtrl.getPersona);
+router.put('/:id', personaCtrl.putPersona);
+router.delete('/:id', personaCtrl.deletePersona);
 
 
 module.exports= router;

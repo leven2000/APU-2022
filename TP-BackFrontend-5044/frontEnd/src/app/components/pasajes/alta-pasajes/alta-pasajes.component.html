@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+      Gestion de Pasajes
+    </div>
+    <div class="card-body">
+        <form>
+              <div class="mb-3">
+                <label for="idfuncion" class="form-label">Precio</label>
+                <input name="precio" type="number" class="form-control" id="idnombre"
+                [(ngModel)]="pasajeIngresado.precioPasaje">
+              </div>
+              <div class="mb-3">
+                <label for="idemail" class="form-label">Categoria</label>
+                <input name="Categoria" type="text" class="form-control" id="idemail"
+                [(ngModel)]="pasajeIngresado.categoriaPasajero"  >
+              </div>
+              <div class="mb-3">
+                <label for="idemail" class="form-label">Fecha</label>
+                <input name="Fecha" type="text" class="form-control" id="idemail"
+                [(ngModel)]="pasajeIngresado.fechaCompra"   >
+              </div>
+              <div class="mb-3">
+                <label for="a">Pasajero</label>
+                    <select class="custom-select form-control" name="pasajero" [(ngModel)]="documento">
+                        <option *ngFor="let item of personas"  [value]="item.nro_documento">{{item.nombre}}</option>
+                    </select>
+              </div>
+              <button (click)="cargarPasaje()" type="button" class="btn btn-primary">Guardar</button>              
+        </form>
+    </div>
+</div>

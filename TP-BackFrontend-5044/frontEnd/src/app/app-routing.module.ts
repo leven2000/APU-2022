@@ -5,6 +5,7 @@ import { AltaLibrosComponent } from './components/libros/alta-libros/alta-libros
 import { LibrosComponent } from './components/libros/libros.component';
 import { PasajesComponent } from './components/pasajes/pasajes.component';
 import { TransaccionComponent } from './components/transaccion/transaccion.component';
+import { AltaPasajesComponent } from './components/pasajes/alta-pasajes/alta-pasajes.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'libros', component:LibrosComponent},
   {path:'transacciones', component:TransaccionComponent},
   {path:'pasajes', component:PasajesComponent},
+  {path:'agregarpasajes', component:AltaPasajesComponent},
   {path:'**', pathMatch:'full', redirectTo:'home'}
 ];
 

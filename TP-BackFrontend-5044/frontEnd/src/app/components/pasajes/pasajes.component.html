@@ -1,1 +1,23 @@
-<p>pasajes works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID Pasajero</th>
+            <th>Categoria</th>
+            <th>Precio Pasaje</th>
+            <th>Fecha</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of pasajes">
+            <td>{{item.pasajero}}</td>
+            <td>{{item.categoriaPasajero}}</td>
+            <td>{{item.precioPasaje}}</td>
+            <td>{{item.fechaCompra }}</td>
+            <td>
+                <button  (click)="eliminarPasaje(item._id)" type="btn btn-danger" class="btn btn-
+                secondary" >Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+ </table>
