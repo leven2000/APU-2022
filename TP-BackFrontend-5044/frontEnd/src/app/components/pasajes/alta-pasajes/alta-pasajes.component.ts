@@ -46,6 +46,7 @@ export class AltaPasajesComponent implements OnInit {
     this.pasajeService.postPasaje(this.pasajeIngresado).subscribe(
       result=>{
         console.log(result)
+        this.pasajeIngresado = new Pasaje();
       },
       error=>{
         

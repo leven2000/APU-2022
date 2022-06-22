@@ -12,7 +12,7 @@ import { TransaccionComponent } from './components/transaccion/transaccion.compo
 import { PasajesComponent } from './components/pasajes/pasajes.component';
 import { FormsModule } from '@angular/forms';
 import { AltaLibrosComponent } from './components/libros/alta-libros/alta-libros.component';
-import { AltaLibroComponent } from './compoments/libros/alta-libro/alta-libro.component';
+
 import { AltaPasajesComponent } from './components/pasajes/alta-pasajes/alta-pasajes.component';
 
 @NgModule({
@@ -25,7 +25,6 @@ import { AltaPasajesComponent } from './components/pasajes/alta-pasajes/alta-pas
     TransaccionComponent,
     PasajesComponent,
     AltaLibrosComponent,
-    AltaLibroComponent,
     AltaPasajesComponent
   ],
   imports: [

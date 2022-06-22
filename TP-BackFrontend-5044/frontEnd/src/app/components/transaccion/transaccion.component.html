@@ -6,20 +6,20 @@
 
             <div class="card formulario-color">
                 <div class=" col-md-12 p-2 mb-2 bg-secondary text-white unoo">
-                    Conversion De Divisas
+                    Transacciones
                 </div>
-                <form class=" col-md-12">
+                <form class=" col-md-12" #transaccionForm="ngForm">
                     <div class="form-group">
-                        <label for="cantidad">Email</label>
-                        <input type="string" class="form-control" name="email" aria-describedby="Email" [(ngModel)]="email" >
+                        <label for="email">Email</label>
+                        <input type="string" class="form-control" name="email" aria-describedby="Email" [(ngModel)]="email" required>
                     </div>
                     <div class="form-group">
                         <label for="cantidad">Cantidad</label>
-                        <input type="number" class="form-control" id="val" aria-describedby="Cantidad" #val>
+                        <input type="number" class="form-control" id="val" aria-describedby="Cantidad" #val >
                     </div>
                     <div class="form-group">
                         <label for="de">De</label>
-                        <select id="moneda1" class="custom-select form-control" name="moneda1" [(ngModel)]="moneda1">
+                        <select id="moneda1" class="custom-select form-control" name="moneda1" [(ngModel)]="moneda1" >
                             <option value="USD">USD Dolares</option>
                             <option value="ARS">AR Pesos Argentinos</option>
                             <option value="BRL">BR Reales</option>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="a">A</label>
-                        <select id="moneda2" class="custom-select form-control" name="moneda2" [(ngModel)]="moneda2">
+                        <select id="moneda2" class="custom-select form-control" name="moneda2" [(ngModel)]="moneda2" >
                             <option value="USD">USD Dolares</option>
                             <option value="ARS">AR Pesos Argentinos</option>
                             <option value="BRL">BR Reales</option>
@@ -37,9 +37,7 @@
 
                         <h1>{{a.result | currency: "$"}}</h1>
                     </div>
-                    <button type="submit" class=" col-sm-12 btn btn-warning btn-sm" style="margin-bottom: 15px;"
-                        (click)="devolverDiv(val)">Convertir <i class="fas fa-arrow-right "
-                            style="float:right"></i></button>
+                    <button disabled type="button" class=" col-sm-12 btn btn-warning btn-sm" style="margin-bottom: 15px;" (click)="devolverDiv(val)"  >Convertir </button>
 
                 </form>
         </div>

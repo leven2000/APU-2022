@@ -29,6 +29,7 @@ export class TransaccionComponent implements OnInit {
   }
 
   public devolverDiv(val: HTMLInputElement) {
+    console.log(val.valueAsNumber, this.moneda1, this.moneda2);
     this.transaccion = new Transaccion();
     this.transaccion.cantidadOrigen = val.valueAsNumber;
     this.divisa_servicio.getDiv(this.moneda1, this.moneda2, val.valueAsNumber).subscribe(

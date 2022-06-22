@@ -31,6 +31,7 @@ export class AltaLibrosComponent implements OnInit {
     this.librosService.postLibro(this.libro).subscribe(
       result =>{
         console.log(result)
+        this.libro = new Libro();
       },
       error=>{
 
