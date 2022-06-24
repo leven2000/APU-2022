@@ -10,24 +10,13 @@ import { Libro } from 'src/app/models/libros';
 export class AltaLibrosComponent implements OnInit {
 
   libro!:Libro
-  nombre!:string
-  descripcion!:string
-  imagen!:string
-  stock!:string
-  destacado = false
-  constructor(private librosService:LibroService) { }
+
+  constructor(private librosService:LibroService) {this.libro = new Libro(); }
 
   ngOnInit(): void {
   }
 
   guardar(){
-    this.libro = new Libro();
-    this.libro.descripcion = this.descripcion;
-    this.libro.libro = this.nombre;
-    this.libro.imagen = this.imagen;
-    this.libro.destacado = this.destacado;
-    this.libro.stock = this.stock;
-
     this.librosService.postLibro(this.libro).subscribe(
       result =>{
         console.log(result)

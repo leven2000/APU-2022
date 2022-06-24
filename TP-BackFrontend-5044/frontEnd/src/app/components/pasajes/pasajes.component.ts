@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PasajeService } from 'src/app/services/pasaje.service';
 import { Pasaje } from 'src/app/models/pasaje';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pasajes',
@@ -11,7 +12,7 @@ export class PasajesComponent implements OnInit {
 
   pasajes!:Array<Pasaje>
 
-  constructor(private pasajeService: PasajeService) { 
+  constructor(private pasajeService: PasajeService, private router: Router) { 
     this.cargarPasajes();
   }
 
@@ -44,5 +45,8 @@ export class PasajesComponent implements OnInit {
       error=>{
       }
     )
+  }
+  llamarAgregarPasaje(){
+    this.router.navigate(['altapasajes', 0])
   }
 }

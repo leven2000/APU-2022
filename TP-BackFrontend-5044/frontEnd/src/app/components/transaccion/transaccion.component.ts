@@ -20,11 +20,13 @@ export class TransaccionComponent implements OnInit {
   a: any;
 
   constructor(private divisa_servicio: DivisaService, private transaccionService: TransaccionService) {
+    
     this.divisa = new Divisa();
+    
   }
 
   ngOnInit() {
-   
+    this.getTransacciones()
 
   }
 

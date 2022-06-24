@@ -11,7 +11,18 @@ export class PasajeService {
   urlBase: string = "http://localhost:3000/api/pasajes/"
   
   constructor(private _http:HttpClient) { }
+  public editPasaje(id:string, pasaje:Pasaje): Observable<any>{
+    const httpOptions = {
+      Headers: new HttpHeaders({
 
+      }),
+      params: new HttpParams({
+         
+      })
+    };
+    
+    return this._http.put(this.urlBase + id, pasaje)
+  }
   public postPasaje(pasaje:Pasaje): Observable<any>{
     const httpOptions = {
       Headers: new HttpHeaders({
@@ -36,6 +47,18 @@ export class PasajeService {
       })
     };
     return this._http.get(this.urlBase )
+  }
+
+  public getPasaje(id:string): Observable <any>{
+    const httpOptions = {
+      Headers: new HttpHeaders({
+
+      }),
+      params: new HttpParams({
+
+      })
+    };
+    return this._http.get(this.urlBase + id)
   }
 
   public deletePasaje (id: string): Observable <any>{

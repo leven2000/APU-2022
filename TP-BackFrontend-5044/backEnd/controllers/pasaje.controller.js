@@ -6,7 +6,10 @@ pasajeCtrl.getPasajes = async (req , res) =>{
     res.json(pasajes)
 }
 
-
+pasajeCtrl.getPasaje = async (req, res)=>{
+    const pasaje = await Pasaje.find({_id: req.params.id});
+    res.json(pasaje);
+}
 
 
 pasajeCtrl.deletePasaje = async (req, res)=>{
@@ -46,11 +49,8 @@ pasajeCtrl.createPasaje = async (req, res) =>{
 pasajeCtrl.editPasaje = async (req, res) => {
     const pasaje = new Pasaje(req.body);
     try {
-        await Pasaje.updateOne({_id: req.params._id}, pasaje);
-        res.json({
-            'status': '1',
-            'msg': 'Pasaje editado con exito'
-        })
+        await Pasaje.updateOne({_id: req.params.id}, pasaje);
+        res.json(req.params.id)
     }
     catch (error){
         res.status(400).json({

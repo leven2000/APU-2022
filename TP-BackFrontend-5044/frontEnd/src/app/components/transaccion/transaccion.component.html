@@ -37,7 +37,7 @@
 
                         <h1>{{a.result | currency: "$"}}</h1>
                     </div>
-                    <button disabled type="button" class=" col-sm-12 btn btn-warning btn-sm" style="margin-bottom: 15px;" (click)="devolverDiv(val)"  >Convertir </button>
+                    <button [disabled]="transaccionForm.invalid" type="button" class=" col-sm-12 btn btn-warning btn-sm" style="margin-bottom: 15px;" (click)="devolverDiv(val)"  >Convertir </button>
 
                 </form>
         </div>

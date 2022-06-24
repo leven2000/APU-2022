@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'libros', component:LibrosComponent},
   {path:'transacciones', component:TransaccionComponent},
   {path:'pasajes', component:PasajesComponent},
-  {path:'agregarpasajes', component:AltaPasajesComponent},
+  {path:'altapasajes/:id', component:AltaPasajesComponent},
   {path:'**', pathMatch:'full', redirectTo:'home'}
 ];
 

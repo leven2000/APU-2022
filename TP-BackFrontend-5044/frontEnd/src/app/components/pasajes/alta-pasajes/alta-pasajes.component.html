@@ -28,7 +28,8 @@
                         <option *ngFor="let item of personas"  [value]="item.nro_documento">{{item.nombre}}</option>
                     </select>
               </div>
-              <button (click)="cargarPasaje()" type="button" class="btn btn-primary" [disabled]="pasajeForm.invalid" >Guardar</button>              
+              <button  *ngIf="accion=='new'" (click)="cargarPasaje()" type="button" class="btn btn-primary" [disabled]="pasajeForm.invalid" >Guardar</button> 
+              <button  *ngIf="accion=='update'" (click)="actualizarPasaje()" type="button" class="btn btn-primary" [disabled]="pasajeForm.invalid" >Actualizar</button>                      
         </form>
     </div>
 </div>
